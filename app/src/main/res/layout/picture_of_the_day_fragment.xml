@@ -78,9 +78,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:fabCradleRoundedCornerRadius="20dp"
         app:backgroundTint="@color/teal_200"
         app:fabAlignmentMode="center"
+        app:fabAnimationMode="slide"
+        app:fabCradleRoundedCornerRadius="20dp"
         app:navigationIcon="@drawable/ic_baseline_dehaze_24" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

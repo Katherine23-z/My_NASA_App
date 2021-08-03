@@ -14,7 +14,9 @@ import com.example.mynasaapplication.R
 import com.example.mynasaapplication.databinding.PictureOfTheDayFragmentBinding
 import com.example.mynasaapplication.model.PictureOfTheDayData
 import com.example.mynasaapplication.ui.Navigation
+import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -24,6 +26,7 @@ class PictureOfTheDayFragment : Fragment() {
 
     companion object {
         fun newInstance() = PictureOfTheDayFragment()
+        private var isMain = true
     }
 
     private val viewModel: PictureOfTheDayViewModel by lazy {
@@ -35,19 +38,15 @@ class PictureOfTheDayFragment : Fragment() {
     private lateinit var explanation :TextView
     private lateinit var mainFragmentLoadingLayout: FrameLayout
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
-    //private var _binding: PictureOfTheDayFragmentBinding? = null
-    //private val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.picture_of_the_day_fragment, container, false)
-
-        //_binding = PictureOfTheDayFragmentBinding.inflate(inflater, container, false)
         val activity: MainActivity = context as MainActivity
         navigation = activity.getNavigation()
         main = view.findViewById(R.id.main)
         imageView = view.findViewById(R.id.image_view)
-        explanation = view.findViewById(R.id.picture_explanation)
+        explanation = view.findViewById(R.id.bottom_sheet_description)
         mainFragmentLoadingLayout = view.findViewById(R.id.mainFragmentLoadingLayout)
         return view
     }
@@ -81,7 +80,11 @@ class PictureOfTheDayFragment : Fragment() {
                     mainFragmentLoadingLayout.visibility = View.GONE
                     Snackbar.make(main, "Sucess", Snackbar.LENGTH_LONG).show()
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
-                    imageView.load(myUrl)
+                    imageView.load(myUrl) {
+                        lifecycle(this@PictureOfTheDayFragment)
+                        error(R.drawable.ic_error_foreground)
+                        placeholder(R.drawable.ic_no_photo_foreground)
+                    }
                     showDescription(explanation, description)
                 }
             }
@@ -107,7 +110,7 @@ class PictureOfTheDayFragment : Fragment() {
 
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -122,11 +125,9 @@ class PictureOfTheDayFragment : Fragment() {
             R.id.action_clear -> Toast.makeText(context, "Clear", Toast.LENGTH_SHORT).show()
             android.R.id.home -> {
                 activity?.let {
-
+                    BottomNavigationDrawerFragment().show(requireFragmentManager(),"TAG")
                 }
             }
-
-
         }
         return super.onOptionsItemSelected(item)
     }
@@ -135,6 +136,16 @@ class PictureOfTheDayFragment : Fragment() {
         val context = activity as MainActivity
         context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
         setHasOptionsMenu(true)
+        val bottomAppBar = view.findViewById<BottomAppBar>(R.id.bottom_app_bar)
+        view.findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
+            if(isMain){
+                bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_END
+            }
+            else {
+                bottomAppBar.fabAlignmentMode = BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+            }
+            isMain = isMain.not()
+        }
     }
 
 
