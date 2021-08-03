@@ -6,12 +6,9 @@
 
 <androidx.core.widget.NestedScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:layout_height="match_parent">
 
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
@@ -39,8 +36,8 @@
         android:id="@+id/input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Найти в Википедии"
-        app:helperText="Поищите теримин в википедии"
+        android:hint="@string/search_in_wiki"
+        app:helperText="@string/search_in_wiki_hint"
         app:counterEnabled="true"
         app:counterMaxLength="30"
         app:boxStrokeColor="@color/teal_200"
@@ -54,18 +51,46 @@
             android:inputType="text"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.example.mynasaapplication.ui.main.EquilateralImageView
+    <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:contentDescription="Photo of the day"
+        android:scaleType="fitCenter"
+        android:contentDescription="@string/photo_of_the_day"
         android:src="@drawable/ic_launcher_background"/>
+
+    <TextView
+        android:id="@+id/picture_explanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        tools:text="@tools:sample/lorem"/>
 
 </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>
 
     <include layout="@layout/bottom_sheet_layout" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottom_app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:fabCradleRoundedCornerRadius="20dp"
+        app:backgroundTint="@color/teal_200"
+        app:fabAlignmentMode="center"
+        app:navigationIcon="@drawable/ic_baseline_dehaze_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purple_500"
+        android:contentDescription="@string/add"
+        app:layout_anchor="@id/bottom_app_bar"
+        app:srcCompat="@drawable/ic_plus_foreground"
+        app:tint="#FFFFFF" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

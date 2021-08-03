@@ -4,10 +4,8 @@ import android.content.Intent
 import android.net.Uri
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import coil.api.load
@@ -49,7 +47,7 @@ class PictureOfTheDayFragment : Fragment() {
         navigation = activity.getNavigation()
         main = view.findViewById(R.id.main)
         imageView = view.findViewById(R.id.image_view)
-        explanation = view.findViewById(R.id.bottom_sheet_description)
+        explanation = view.findViewById(R.id.picture_explanation)
         mainFragmentLoadingLayout = view.findViewById(R.id.mainFragmentLoadingLayout)
         return view
     }
@@ -63,6 +61,7 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
+        setBottomAppBar(view)
         view.findViewById<TextInputLayout>(R.id.input_layout).setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${view.findViewById<TextInputEditText>(R.id.input_edit_text).text.toString()}")
@@ -110,5 +109,33 @@ class PictureOfTheDayFragment : Fragment() {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.bottom_bar_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_addToFav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.action_settings -> Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show()
+            R.id.action_clear -> Toast.makeText(context, "Clear", Toast.LENGTH_SHORT).show()
+            android.R.id.home -> {
+                activity?.let {
+
+                }
+            }
+
+
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setBottomAppBar(view: View) {
+        val context = activity as MainActivity
+        context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
+        setHasOptionsMenu(true)
+    }
+
 
 }
