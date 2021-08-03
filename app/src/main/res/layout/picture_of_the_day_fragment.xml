@@ -58,14 +58,7 @@
         android:layout_gravity="center"
         android:scaleType="fitCenter"
         android:contentDescription="@string/photo_of_the_day"
-        android:src="@drawable/ic_launcher_background"/>
-
-    <TextView
-        android:id="@+id/picture_explanation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        tools:text="@tools:sample/lorem"/>
+        android:src="@drawable/cosmos"/>
 
 </LinearLayout>
 
