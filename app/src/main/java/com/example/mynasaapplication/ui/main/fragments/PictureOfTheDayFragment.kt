@@ -1,25 +1,31 @@
-package com.example.mynasaapplication.ui.main
+package com.example.mynasaapplication.ui.main.fragments
 
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
 import android.net.Uri
+import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.constraintlayout.widget.ConstraintLayout
 import coil.api.load
 import com.example.mynasaapplication.MainActivity
 import com.example.mynasaapplication.R
-import com.example.mynasaapplication.databinding.PictureOfTheDayFragmentBinding
 import com.example.mynasaapplication.model.PictureOfTheDayData
 import com.example.mynasaapplication.ui.Navigation
+import com.example.mynasaapplication.ui.main.viewModel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.chip.ChipGroup
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.picture_of_the_day_fragment.*
+import java.util.*
 
 
 class PictureOfTheDayFragment : Fragment() {
@@ -36,6 +42,7 @@ class PictureOfTheDayFragment : Fragment() {
     private lateinit var main: LinearLayout
     private lateinit var imageView: ImageView
     private lateinit var explanation :TextView
+    private lateinit var chipGroup: ChipGroup
     private lateinit var mainFragmentLoadingLayout: FrameLayout
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
 
@@ -47,10 +54,12 @@ class PictureOfTheDayFragment : Fragment() {
         main = view.findViewById(R.id.main)
         imageView = view.findViewById(R.id.image_view)
         explanation = view.findViewById(R.id.bottom_sheet_description)
+        chipGroup = view.findViewById(R.id.chipGroup)
         mainFragmentLoadingLayout = view.findViewById(R.id.mainFragmentLoadingLayout)
         return view
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel.getLiveData().observe(viewLifecycleOwner, {renderData(it)})
@@ -66,6 +75,14 @@ class PictureOfTheDayFragment : Fragment() {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${view.findViewById<TextInputEditText>(R.id.input_edit_text).text.toString()}")
             })
         }
+        chipYesterday.setOnClickListener {
+            navigation.addFragment(PictureOfYesterdayFragment.newInstance(), true)
+        }
+
+        chipTwoDaysAgo.setOnClickListener {
+            navigation.addFragment(TwoDaysAgoFragment.newInstance(), true)
+        }
+
     }
 
     fun renderData(data: PictureOfTheDayData) {
@@ -78,7 +95,6 @@ class PictureOfTheDayFragment : Fragment() {
                     Snackbar.make(main, "Ссылка пустая", Snackbar.LENGTH_LONG).show()
                 } else {
                     mainFragmentLoadingLayout.visibility = View.GONE
-                    Snackbar.make(main, "Sucess", Snackbar.LENGTH_LONG).show()
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                     imageView.load(myUrl) {
                         lifecycle(this@PictureOfTheDayFragment)
@@ -90,12 +106,10 @@ class PictureOfTheDayFragment : Fragment() {
             }
             is PictureOfTheDayData.Loading -> {
                 mainFragmentLoadingLayout.visibility = View.VISIBLE
-                Snackbar.make(main, "Loading", Snackbar.LENGTH_LONG).show()
                 Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
             }
             is PictureOfTheDayData.Error -> {
                 mainFragmentLoadingLayout.visibility = View.VISIBLE
-                Snackbar.make(main, "Error", Snackbar.LENGTH_LONG).show()
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
 
             }
@@ -121,7 +135,10 @@ class PictureOfTheDayFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_addToFav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
-            R.id.action_settings -> Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show()
+            R.id.action_settings -> {
+                Toast.makeText(context, "Settings", Toast.LENGTH_SHORT).show()
+                navigation.addFragment(SettingsFragment.newInstance(), true)
+            }
             R.id.action_clear -> Toast.makeText(context, "Clear", Toast.LENGTH_SHORT).show()
             android.R.id.home -> {
                 activity?.let {

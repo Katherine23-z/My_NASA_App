@@ -1,4 +1,4 @@
-package com.example.mynasaapplication.ui.main
+package com.example.mynasaapplication.ui.main.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

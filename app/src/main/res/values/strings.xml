@@ -9,4 +9,6 @@
     <string name="move_to_1st_screen">На экран 1</string>
     <string name="move_to_2nd_screen">На экран 2</string>
     <string name="add">Добавить</string>
+    <string name="yesterday">Вчера</string>
+    <string name="two_days_ago">Два дня назад</string>
 </resources>

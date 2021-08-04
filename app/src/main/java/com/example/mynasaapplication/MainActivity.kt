@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mynasaapplication.databinding.MainActivityBinding
 import com.example.mynasaapplication.ui.Navigation
-import com.example.mynasaapplication.ui.main.PictureOfTheDayFragment
+import com.example.mynasaapplication.ui.main.fragments.PictureOfTheDayFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navigation : Navigation
