@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MyNASAApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.MyNASAApplication" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -13,4 +13,76 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimaryDark">?themeColorPrimaryDark</item>
+        <item name="colorPrimary">?themeColorPrimary</item>
+    </style>
+
+
+    <style name="RedTheme" parent="AppTheme">
+        <item name="colorOnPrimary">@color/light_purple</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="colorSurface">@color/baby_pink</item>
+        <item name="themeColorPrimaryDark">@color/dark_purple</item>
+        <item name="themeColorPrimary">@color/wine_red</item>
+        <item name="bottomAppBarStyle">@style/MyRedBottomAppBar</item>
+        <item name="floatingActionButtonStyle">@style/RedFabButton</item>
+        <item name="textInputStyle">@style/RedAppTextField</item>
+        <item name="android:navigationBarColor">@color/dark_purple</item>
+        <item name="android:colorBackground">@color/baby_blue</item>
+    </style>
+
+
+    <style name="SpringTheme" parent="AppTheme">
+        <item name="themeColorPrimaryDark">@color/sea_green</item>
+        <item name="themeColorPrimary">@color/lime</item>
+        <item name="colorSurface">@color/light_yellow</item>
+        <item name="colorOnPrimary">@color/grey</item>
+        <item name="floatingActionButtonStyle">@style/SpringFabButton</item>
+        <item name="bottomAppBarStyle">@style/SpringBottomAppBar</item>
+        <item name="textInputStyle">@style/SpringAppTextField</item>
+        <item name="android:navigationBarColor">@color/green</item>
+        <item name="android:colorBackground">@color/light_grey</item>
+        <item name="fontFamily">@font/monte_carlo_regular</item>
+        <item name="android:fontFamily">@font/monte_carlo_regular</item>
+    </style>
+
+    <style name="RedFabButton" parent = "Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/dark_purple</item>
+        <item name="elevation">10dp</item>
+        <item name="rippleColor">@color/dark_pink</item>
+    </style>
+
+    <style name="SpringFabButton" parent = "Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@color/sea_green</item>
+        <item name="elevation">30dp</item>
+        <item name="fabCradleRoundedCornerRadius">100dp</item>
+    </style>
+
+    <style name="MyRedBottomAppBar" parent = "Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="backgroundTint">@color/wine_red</item>
+    </style>
+
+    <style name="SpringBottomAppBar" parent = "Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="backgroundTint">@color/lime</item>
+    </style>
+
+    <style name="RedAppTextField"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/baby_pink</item>
+        <item name="boxStrokeColor">@color/wine_red</item>
+        <item name="hintTextColor">@color/wine_red</item>
+        <item name="counterTextColor">@color/wine_red</item>
+    </style>
+
+    <style name="SpringAppTextField"
+        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundColor">@color/light_yellow</item>
+        <item name="boxStrokeColor">@color/green</item>
+        <item name="hintTextColor">@color/green</item>
+        <item name="counterTextColor">@color/green</item>
+    </style>
+
+
 </resources>

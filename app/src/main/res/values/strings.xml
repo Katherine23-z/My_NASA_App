@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">My NASA Application</string>
+    <string name="search_in_wiki">Найти в Википедии</string>
+    <string name="search_in_wiki_hint">Поищите теримин в википедии</string>
+    <string name="photo_of_the_day">Фото дня</string>
+    <string name="add_to_fav">Добавить в избранное</string>
+    <string name="settings">Настройки</string>
+    <string name="clear">Очистить</string>
+    <string name="move_to_1st_screen">На экран 1</string>
+    <string name="move_to_2nd_screen">На экран 2</string>
+    <string name="add">Добавить</string>
+    <string name="yesterday">Вчера</string>
+    <string name="two_days_ago">Два дня назад</string>
+    <string name="wine_red_theme">Wine-Red Theme</string>
+    <string name="spring_theme">Spring Theme</string>
+    <string name="default_theme">Default Theme</string>
 </resources>
