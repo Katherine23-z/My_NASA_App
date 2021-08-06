@@ -11,4 +11,7 @@
     <string name="add">Добавить</string>
     <string name="yesterday">Вчера</string>
     <string name="two_days_ago">Два дня назад</string>
+    <string name="wine_red_theme">Wine-Red Theme</string>
+    <string name="spring_theme">Spring Theme</string>
+    <string name="default_theme">Default Theme</string>
 </resources>

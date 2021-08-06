@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -40,7 +41,6 @@
         app:helperText="@string/search_in_wiki_hint"
         app:counterEnabled="true"
         app:counterMaxLength="30"
-        app:boxStrokeColor="@color/teal_200"
         app:endIconMode="custom"
         app:endIconDrawable="@drawable/ic_baseline_search_24">
 
@@ -92,7 +92,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:backgroundTint="@color/teal_200"
         app:fabAlignmentMode="center"
         app:fabAnimationMode="slide"
         app:fabCradleRoundedCornerRadius="20dp"
@@ -102,10 +101,9 @@
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purple_500"
         android:contentDescription="@string/add"
         app:layout_anchor="@id/bottom_app_bar"
-        app:srcCompat="@drawable/ic_plus_foreground"
+        app:srcCompat="@drawable/ic_baseline_add_24"
         app:tint="#FFFFFF" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
