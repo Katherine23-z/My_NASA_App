@@ -1,4 +1,4 @@
-package com.example.mynasaapplication.model
+package com.example.mynasaapplication.model.POD
 
 import com.google.gson.annotations.SerializedName
 

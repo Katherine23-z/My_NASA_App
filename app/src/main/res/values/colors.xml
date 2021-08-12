@@ -11,11 +11,13 @@
     <color name="yellow">#F3F781</color>
     <color name="light_green">#58FA58</color>
     <color name="green">#04B45F</color>
+    <color name="green_transparency">#4404B45F</color>
     <color name="baby_blue">#81F7F3</color>
     <color name="baby_pink">#F6CED8</color>
     <color name="wine_red">#610B21</color>
     <color name="pink">#FE2E64</color>
     <color name="dark_pink">#FE2E64</color>
+    <color name="dark_pink_transparency">#55FE2E64</color>
     <color name="light_purple">#BE81F7</color>
     <color name="purple">#5F04B4</color>
     <color name="dark_purple">#220A29</color>

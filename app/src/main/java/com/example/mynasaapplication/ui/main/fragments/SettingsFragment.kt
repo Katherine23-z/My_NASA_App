@@ -7,16 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
 import android.widget.RadioGroup
+import androidx.core.view.children
 import androidx.fragment.app.Fragment
-import com.example.mynasaapplication.R
+import com.example.mynasaapplication.*
 import com.google.android.material.radiobutton.MaterialRadioButton
-import kotlinx.android.synthetic.main.settings_fragment.*
-
-private const val SHARED_PREF_NAME = "THEME_COLOR"
-private const val APP_THEME = "APP_THEME"
-private const val RED_APP_THEME = 1
-private const val DEF_THEME = 0
-private const val SPRING_THEME = 2
 
 class SettingsFragment : Fragment() {
     private lateinit var redTheme: MaterialRadioButton
@@ -47,20 +41,28 @@ class SettingsFragment : Fragment() {
         initRadioBtn(redTheme, RED_APP_THEME )
         initRadioBtn(springTheme, SPRING_THEME )
         initRadioBtn(defTheme, DEF_THEME )
-        checked = rg.getChildAt(getCodeStyle(RED_APP_THEME)) as MaterialRadioButton
-        checked.isChecked
+        val currentStyle = getCodeStyle()
+
+        checked = rg.children.first {  it.tag == currentStyle } as MaterialRadioButton
+
+       // checked = rg.getChildAt(getCodeStyle())
+
+        checked.isChecked = true
     }
 
     fun initRadioBtn(button: RadioButton, codeStyle: Int) {
+        button.tag = codeStyle
         button.setOnClickListener {
             setAppTheme(codeStyle)
             requireActivity().recreate()
         }
     }
 
-    fun getCodeStyle(codeStyle: Int): Int {
+    fun getCodeStyle(): Int {
         val sharedPref = requireActivity().getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE)
-        return sharedPref.getInt(APP_THEME, codeStyle)
+        val index = sharedPref.getInt(APP_THEME, DEF_THEME)
+
+        return index
     }
 
     fun setAppTheme(codeStyle: Int) {

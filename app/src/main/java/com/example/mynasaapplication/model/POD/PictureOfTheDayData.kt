@@ -1,4 +1,4 @@
-package com.example.mynasaapplication.model
+package com.example.mynasaapplication.model.POD
 
 sealed class PictureOfTheDayData {
     data class Success(val serverResponseData : PODServerResponseData) : PictureOfTheDayData()

@@ -7,9 +7,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mynasaapplication.BuildConfig
-import com.example.mynasaapplication.model.PODRetrofitImpl
-import com.example.mynasaapplication.model.PODServerResponseData
-import com.example.mynasaapplication.model.PictureOfTheDayData
+import com.example.mynasaapplication.model.POD.PODRetrofitImpl
+import com.example.mynasaapplication.model.POD.PODServerResponseData
+import com.example.mynasaapplication.model.POD.PictureOfTheDayData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

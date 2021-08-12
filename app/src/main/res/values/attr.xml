@@ -3,4 +3,7 @@
     <attr name="bottomAppBarColour" format="reference"/>
     <attr name="themeColorPrimaryDark" format="reference"/>
     <attr name="themeColorPrimary" format="reference"/>
+    <attr name="themeColorAccent" format="reference"/>
+    <attr name="themeColorAccent40Alfa" format="reference"/>
+    <attr name="bottomColorTint" format="reference"/>
 </resources>

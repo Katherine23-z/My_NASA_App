@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.example.mynasaapplication.R
-import com.example.mynasaapplication.model.PictureOfTheDayData
+import com.example.mynasaapplication.model.POD.PictureOfTheDayData
 import com.example.mynasaapplication.ui.main.viewModel.PictureOfYesterdayViewModel
 import kotlinx.android.synthetic.main.picture_of_yesterday_fragment.*
 

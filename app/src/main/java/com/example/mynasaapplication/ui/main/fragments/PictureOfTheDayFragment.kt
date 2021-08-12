@@ -1,7 +1,6 @@
 package com.example.mynasaapplication.ui.main.fragments
 
 import android.content.Intent
-import android.icu.text.SimpleDateFormat
 import android.net.Uri
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
@@ -14,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import coil.api.load
 import com.example.mynasaapplication.MainActivity
 import com.example.mynasaapplication.R
-import com.example.mynasaapplication.model.PictureOfTheDayData
+import com.example.mynasaapplication.model.POD.PictureOfTheDayData
 import com.example.mynasaapplication.ui.Navigation
 import com.example.mynasaapplication.ui.main.viewModel.PictureOfTheDayViewModel
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -62,7 +61,9 @@ class PictureOfTheDayFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel.getLiveData().observe(viewLifecycleOwner, {renderData(it)})
+        viewModel.getLiveData().observe(viewLifecycleOwner, {
+            renderData(it)
+        })
 
     }
 

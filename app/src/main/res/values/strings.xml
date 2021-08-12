@@ -14,4 +14,15 @@
     <string name="wine_red_theme">Wine-Red Theme</string>
     <string name="spring_theme">Spring Theme</string>
     <string name="default_theme">Default Theme</string>
+    <string name="title_activity_bootom_nav">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="already_tapped">Already tapped</string>
+    <string name="photo_of_mars">Photo Of Mars</string>
+    <string name="photo_of_earth">Photo of Earth</string>
+    <string name="photo_of_moon">Photo of Moon</string>
+    <string name="moon">Moon</string>
+    <string name="mars">Mars</string>
+    <string name="earth">Earth</string>
 </resources>

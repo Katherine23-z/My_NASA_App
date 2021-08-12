@@ -36,7 +36,7 @@
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:contentDescription="@string/photo_of_the_day"
-            android:src="@drawable/ic_my_nasa_icon_foreground"/>
+            android:src="@drawable/cosmos"/>
 
         <TextView
             android:id="@+id/two_days_ago_text_explanation"
