@@ -9,6 +9,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.*
 import androidx.annotation.RequiresApi
+import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.widget.ConstraintLayout
 import coil.api.load
 import com.example.mynasaapplication.MainActivity
@@ -38,7 +39,7 @@ class PictureOfTheDayFragment : Fragment() {
         ViewModelProvider(this).get(PictureOfTheDayViewModel::class.java)
     }
     private lateinit var navigation: Navigation
-    private lateinit var main: LinearLayout
+    private lateinit var main: MotionLayout
     private lateinit var imageView: ImageView
     private lateinit var explanation :TextView
     private lateinit var chipGroup: ChipGroup
@@ -47,14 +48,14 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.picture_of_the_day_fragment, container, false)
+        val view = inflater.inflate(R.layout.fragment_main_start, container, false)
         val activity: MainActivity = context as MainActivity
         navigation = activity.getNavigation()
         main = view.findViewById(R.id.main)
         imageView = view.findViewById(R.id.image_view)
         explanation = view.findViewById(R.id.bottom_sheet_description)
         chipGroup = view.findViewById(R.id.chipGroup)
-        mainFragmentLoadingLayout = view.findViewById(R.id.mainFragmentLoadingLayout)
+        //mainFragmentLoadingLayout = view.findViewById(R.id.mainFragmentLoadingLayout)
         return view
     }
 
@@ -84,6 +85,10 @@ class PictureOfTheDayFragment : Fragment() {
             navigation.addFragment(TwoDaysAgoFragment.newInstance(), true)
         }
 
+        chipSolarSystem.setOnClickListener {
+            navigation.addFragment(SolarSystemFragment.newInstance(), true)
+        }
+
     }
 
     fun renderData(data: PictureOfTheDayData) {
@@ -95,7 +100,7 @@ class PictureOfTheDayFragment : Fragment() {
                 if (myUrl.isNullOrEmpty()) {
                     Snackbar.make(main, "Ссылка пустая", Snackbar.LENGTH_LONG).show()
                 } else {
-                    mainFragmentLoadingLayout.visibility = View.GONE
+                    //mainFragmentLoadingLayout.visibility = View.GONE
                     Toast.makeText(context, "Success", Toast.LENGTH_SHORT).show()
                     imageView.load(myUrl) {
                         lifecycle(this@PictureOfTheDayFragment)
@@ -106,11 +111,11 @@ class PictureOfTheDayFragment : Fragment() {
                 }
             }
             is PictureOfTheDayData.Loading -> {
-                mainFragmentLoadingLayout.visibility = View.VISIBLE
+                //mainFragmentLoadingLayout.visibility = View.VISIBLE
                 Toast.makeText(context, "Loading", Toast.LENGTH_SHORT).show()
             }
             is PictureOfTheDayData.Error -> {
-                mainFragmentLoadingLayout.visibility = View.VISIBLE
+                //mainFragmentLoadingLayout.visibility = View.VISIBLE
                 Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
 
             }

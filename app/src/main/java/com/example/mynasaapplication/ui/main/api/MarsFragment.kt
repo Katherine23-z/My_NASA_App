@@ -36,9 +36,9 @@ class MarsFragment : Fragment(), CoroutineScope by MainScope(){
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.mars_recycler_layout, container, false)
-        marsLoadingLayout = view.findViewById(R.id.mars_fragment_loading_layout)
-        marsRecycler = view.findViewById(R.id.mars_recycler)
+        val view = inflater.inflate(R.layout.coordinator_layout_experiment, container, false)
+        //marsLoadingLayout = view.findViewById(R.id.mars_fragment_loading_layout)
+        marsRecycler = view.findViewById(R.id.mars_recycler_experiment)
         return view
     }
 
@@ -60,16 +60,16 @@ class MarsFragment : Fragment(), CoroutineScope by MainScope(){
                 if (photos.isNullOrEmpty()){
                     Toast.makeText(requireContext(), "Null", Toast.LENGTH_SHORT).show()
                 }else {
-                    marsLoadingLayout.visibility = View.GONE
+                  // marsLoadingLayout.visibility = View.GONE
                     marsRecycler.adapter = MarsRecyclerAdapter(photos)
                 }
             }
             is PhotoOfMarsData.Loading -> {
-                marsLoadingLayout.visibility = View.VISIBLE
+                //marsLoadingLayout.visibility = View.VISIBLE
                 Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
             }
             is PhotoOfMarsData.Error -> {
-                marsLoadingLayout.visibility = View.VISIBLE
+                //marsLoadingLayout.visibility = View.VISIBLE
                 Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
             }
         }

@@ -19,8 +19,8 @@ class TwoDaysAgoViewModel (private val liveDataToObserve : MutableLiveData<Pictu
                            private val retrofitImpl: PODRetrofitImpl = PODRetrofitImpl()) : ViewModel() {
 
     @RequiresApi(Build.VERSION_CODES.N)
-    fun getLiveData() : LiveData<PictureOfTheDayData> {
-        sendServerRequest()
+    fun getLiveData(date : String) : LiveData<PictureOfTheDayData> {
+        sendServerRequest(date)
         return liveDataToObserve
     }
 
@@ -33,13 +33,13 @@ class TwoDaysAgoViewModel (private val liveDataToObserve : MutableLiveData<Pictu
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    private fun sendServerRequest() {
+    private fun sendServerRequest(date : String) {
         liveDataToObserve.value = PictureOfTheDayData.Loading(null)
         val apiKey: String = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
             PictureOfTheDayData.Error(Throwable("You need API key"))
         } else {
-            retrofitImpl.getRetrofitImpl().getPictureOfTheDay(getDate(), apiKey).enqueue(object :
+            retrofitImpl.getRetrofitImpl().getPictureOfTheDay(date, apiKey).enqueue(object :
                     Callback<PODServerResponseData> {
                 override fun onResponse(
                         call: Call<PODServerResponseData>,

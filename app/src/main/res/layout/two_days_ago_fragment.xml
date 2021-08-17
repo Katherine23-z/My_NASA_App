@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -29,6 +29,7 @@
 
         </FrameLayout>
 
+
         <ImageView
             android:id="@+id/two_days_ago_image_view"
             android:layout_width="match_parent"
@@ -45,4 +46,6 @@
 
     </LinearLayout>
 
-</androidx.core.widget.NestedScrollView>
+    <include layout="@layout/bottom_sheet_date_picker" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

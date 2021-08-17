@@ -25,4 +25,14 @@
     <string name="moon">Moon</string>
     <string name="mars">Mars</string>
     <string name="earth">Earth</string>
+    <string name="solar_system">Solar system</string>
+    <string name="show_date">Show Date</string>
+    <string name="sun">sun</string>
+    <string name="mercury">mercury</string>
+    <string name="venus">venus</string>
+    <string name="jupiter">jupiter</string>
+    <string name="saturn">saturn</string>
+    <string name="uranus">uranus</string>
+    <string name="neptun">neptun</string>
+    <string name="pluto">pluto</string>
 </resources>
