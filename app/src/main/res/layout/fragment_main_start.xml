@@ -87,7 +87,7 @@
                     style="@style/Widget.MaterialComponents.Chip.Action"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/two_days_ago" />
+                    android:text="@string/any_day" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipSolarSystem"
@@ -95,6 +95,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/solar_system" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipAnimation"
+                    style="@style/Widget.MaterialComponents.Chip.Action"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/animation" />
 
             </com.google.android.material.chip.ChipGroup>
 

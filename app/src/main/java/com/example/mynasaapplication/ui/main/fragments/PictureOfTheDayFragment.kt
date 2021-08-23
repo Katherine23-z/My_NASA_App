@@ -78,7 +78,7 @@ class PictureOfTheDayFragment : Fragment() {
             })
         }
         chipYesterday.setOnClickListener {
-            navigation.addFragment(PictureOfYesterdayFragment.newInstance(), true)
+            navigation.addFragment(PictureOfYesterdayFragment(), true)
         }
 
         chipTwoDaysAgo.setOnClickListener {
@@ -87,6 +87,10 @@ class PictureOfTheDayFragment : Fragment() {
 
         chipSolarSystem.setOnClickListener {
             navigation.addFragment(SolarSystemFragment.newInstance(), true)
+        }
+
+        chipAnimation.setOnClickListener {
+            navigation.addFragment(AnimationFragment.newinstance(), true)
         }
 
     }
