@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navigation : Navigation
     private lateinit var binding : MainActivityBinding
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         setTheme(getAppTheme(RED_APP_THEME))
         super.onCreate(savedInstanceState)
@@ -20,7 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         navigation = Navigation(supportFragmentManager, R.id.container)
         navigation.addFragment(PictureOfTheDayFragment.newInstance(), false)
+
     }
+
 
     fun getNavigation(): Navigation {
         return navigation

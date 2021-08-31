@@ -10,6 +10,7 @@ import com.example.mynasaapplication.MainActivity
 import com.example.mynasaapplication.R
 import com.example.mynasaapplication.ui.Navigation
 import com.example.mynasaapplication.ui.main.api.ApiFragment
+import com.example.mynasaapplication.ui.main.api.ui.NoteFragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.navigation.NavigationView
 
@@ -36,6 +37,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
             when(menuItem.itemId) {
                 R.id.navigation_one -> activity?.let { startActivity(Intent(it, BottomNavigationApiActivity::class.java)) }
                 R.id.navigation_two -> navigation.addFragment(ApiFragment(), true)
+                R.id.navigation_three -> navigation.addFragment(NoteFragment(), true)
             }
             true
         }

@@ -12,6 +12,11 @@
             android:icon="@drawable/ic_baseline_archive_24"
             android:title="@string/move_to_2nd_screen" />
 
+        <item
+            android:id="@+id/navigation_three"
+            android:icon="@drawable/ic_star"
+            android:title="@string/move_to_3d_screen" />
+
     </group>
 
 </menu>
