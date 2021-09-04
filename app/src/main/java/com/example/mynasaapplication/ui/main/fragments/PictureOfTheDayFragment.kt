@@ -1,10 +1,18 @@
 package com.example.mynasaapplication.ui.main.fragments
 
 import android.content.Intent
+import android.content.res.AssetManager
+import android.content.res.Resources
+import android.graphics.Color
+import android.graphics.Typeface
+import android.graphics.Typeface.BOLD
 import android.net.Uri
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.*
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.*
@@ -24,6 +32,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 import kotlinx.android.synthetic.main.picture_of_the_day_fragment.*
 import java.util.*
 
@@ -72,6 +81,9 @@ class PictureOfTheDayFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
         setBottomAppBar(view)
+        /*activity?.let {
+            bottom_sheet_description.typeface = Typeface.createFromAsset(it.assets, "fonts/craftsman.ttf")
+        }*/
         view.findViewById<TextInputLayout>(R.id.input_layout).setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data = Uri.parse("https://en.wikipedia.org/wiki/${view.findViewById<TextInputEditText>(R.id.input_edit_text).text.toString()}")
@@ -95,12 +107,19 @@ class PictureOfTheDayFragment : Fragment() {
 
     }
 
+
     fun renderData(data: PictureOfTheDayData) {
         when (data) {
             is PictureOfTheDayData.Success -> {
                 val serverResponseData = data.serverResponseData
                 val myUrl= serverResponseData.url
-                val description = serverResponseData.explanation
+                val spannable = SpannableString(serverResponseData.explanation)
+                bottom_sheet_description.setText(spannable, TextView.BufferType.SPANNABLE)
+                val spannableText = bottom_sheet_description.text as Spannable
+                spannableText.setSpan(QuoteSpan(Color.BLUE), 0, spannableText.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannableText.setSpan(StyleSpan(BOLD), 0, 3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannableText.setSpan(BackgroundColorSpan(Color.GREEN), 0, spannableText.length/3, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                spannableText.setSpan(ScaleXSpan(5f), 50, 60, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                 if (myUrl.isNullOrEmpty()) {
                     Snackbar.make(main, "Ссылка пустая", Snackbar.LENGTH_LONG).show()
                 } else {
@@ -111,7 +130,7 @@ class PictureOfTheDayFragment : Fragment() {
                         error(R.drawable.ic_error_foreground)
                         placeholder(R.drawable.ic_no_photo_foreground)
                     }
-                    showDescription(explanation, description)
+                    //showDescription(explanation, description)
                 }
             }
             is PictureOfTheDayData.Loading -> {
@@ -126,10 +145,6 @@ class PictureOfTheDayFragment : Fragment() {
 
         }
 
-    }
-
-    fun showDescription(textView: TextView, text: String?) {
-        textView.text = text
     }
 
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {

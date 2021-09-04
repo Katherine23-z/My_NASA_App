@@ -17,6 +17,11 @@
             android:icon="@drawable/ic_star"
             android:title="@string/move_to_3d_screen" />
 
+        <item
+            android:id="@+id/navigation_four"
+            android:icon="@drawable/ic_star"
+            android:title="@string/move_to_4_screen" />
+
     </group>
 
 </menu>
