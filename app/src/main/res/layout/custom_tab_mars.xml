@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tab_image_textview"
+        android:layout_width="85dp"
+        android:layout_height="80dp"
+        android:drawableStart="@drawable/ic_mars"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="@string/mars"
+        android:textColor="?themeColorAccent"
+        android:textSize="@dimen/custom_tab_text_size" />
+
+</FrameLayout>
