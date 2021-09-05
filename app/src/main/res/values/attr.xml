@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="bottomAppBarColour" format="reference"/>
+    <attr name="themeColorPrimaryDark" format="reference"/>
+    <attr name="themeColorPrimaryLight" format="reference"/>
+    <attr name="themeColorPrimary" format="reference"/>
+    <attr name="themeColorPrimaryVariant" format="reference"/>
+    <attr name="themeColorOnPrimary" format="reference"/>
+    <attr name="themeColorAccent" format="reference"/>
+    <attr name="themeColorAccent40Alfa" format="reference"/>
+    <attr name="bottomColorTint" format="reference"/>
+    <attr name="themeColorSecondary" format="reference"/>
+    <attr name="themeColorSecondaryVariant" format="reference"/>
+    <attr name="themeColorSecondaryDark" format="reference"/>
+    <attr name="themeFontFamily" format="reference"/>
+</resources>

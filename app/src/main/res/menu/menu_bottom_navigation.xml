@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="none">
+
+     <item
+            android:id="@+id/navigation_one"
+            android:icon="@drawable/ic_baseline_moving_24"
+            android:title="@string/move_to_1st_screen" />
+        <item
+            android:id="@+id/navigation_two"
+            android:icon="@drawable/ic_baseline_moving_24"
+            android:title="@string/move_to_2nd_screen" />
+
+        <item
+            android:id="@+id/navigation_three"
+            android:icon="@drawable/ic_baseline_moving_24"
+            android:title="@string/move_to_3d_screen" />
+
+        <item
+            android:id="@+id/navigation_four"
+            android:icon="@drawable/ic_baseline_moving_24"
+            android:title="@string/move_to_4_screen" />
+
+    </group>
+
+</menu>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/expanded_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/background_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/milky"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/background_milky_way"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_sky_blue"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/description1"/>
+
+    <TextView
+        android:id="@+id/description2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/deep_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:text="@string/description2"/>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/sun_fab"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.18"
+        app:layout_constraintHeight_percent="0.10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.512"
+        android:backgroundTint="@color/orange"
+        android:src="@drawable/sun"
+        android:contentDescription="@string/sun"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/mercury"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/sun_fab"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="0"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintEnd_toStartOf="@+id/fab_venus"
+        app:layout_constraintTop_toBottomOf="@+id/fab_pluto"
+        android:backgroundTint="@color/sienna"
+        android:src="@drawable/mercury"
+        android:contentDescription="@string/mercury"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_venus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="268dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="45"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/indian_red"
+        android:src="@drawable/venus"
+        android:contentDescription="@string/venus"
+        app:fabSize="mini"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_earth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="90"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sun_fab"
+        app:layout_constraintTop_toBottomOf="@+id/fab_venus"
+        android:src="@drawable/planet_earth"
+        android:contentDescription="@string/earth"
+        app:fabSize="mini"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_mars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="135"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fab_earth"
+        android:backgroundTint="@color/maroon"
+        android:src="@drawable/mars"
+        android:contentDescription="@string/mars"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_jupiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="180"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintEnd_toStartOf="@+id/fab_mars"
+        app:layout_constraintTop_toBottomOf="@+id/sun_fab"
+        android:src="@drawable/jupiter"
+        android:contentDescription="@string/jupiter"
+        app:fabSize="mini"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_saturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="225"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/saturn"
+        android:contentDescription="@string/saturn"
+        app:fabSize="mini"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_uranus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/fab_saturn"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="270"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintEnd_toStartOf="@+id/sun_fab"
+        app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="@color/deep_green"
+        android:src="@drawable/uranus"
+        android:contentDescription="@string/uranus"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_neptun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="315"
+        app:layout_constraintCircleRadius="120dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/neptune"
+        android:contentDescription="@string/neptun"
+        app:fabSize="mini"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_pluto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintCircle="@id/sun_fab"
+        app:layout_constraintCircleAngle="350"
+        app:layout_constraintCircleRadius="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:backgroundTint="@color/plum"
+        android:src="@drawable/pluto"
+        android:contentDescription="@string/pluto"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
