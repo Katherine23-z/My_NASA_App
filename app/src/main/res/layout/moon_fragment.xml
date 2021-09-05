@@ -27,8 +27,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="@string/photo_of_moon"
-        android:textAlignment="center"
-        android:textSize="@dimen/title_text_size"/>
+        style="@style/TitlesTextStyle"/>
 
     <!--<ImageView
         android:id="@+id/photo_of_moon"
@@ -43,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/title_text_size"
-        android:textColor="@color/state_blue"
+        android:textStyle="normal"
         tools:text="@tools:sample/lorem/random"/>
 
 </LinearLayout>

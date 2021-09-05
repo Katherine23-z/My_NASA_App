@@ -20,6 +20,12 @@
             android:layout_height="wrap_content"
             android:text="@string/spring_theme"/>
 
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/green_theme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/teal_green"/>
+
         <com.google.android.material.radiobutton.MaterialRadioButton
             android:id="@+id/def_theme"
             android:layout_width="match_parent"

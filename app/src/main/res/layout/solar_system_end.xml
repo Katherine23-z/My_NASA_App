@@ -31,7 +31,7 @@
         android:id="@+id/description2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/sea_green"
+        android:background="@color/deep_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -156,7 +156,7 @@
         app:layout_constraintCircleRadius="120dp"
         app:layout_constraintEnd_toStartOf="@+id/sun_fab"
         app:layout_constraintStart_toStartOf="parent"
-        android:backgroundTint="@color/sea_green"
+        android:backgroundTint="@color/deep_green"
         android:src="@drawable/uranus"
         android:contentDescription="@string/uranus"
         />

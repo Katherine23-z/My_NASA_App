@@ -6,7 +6,7 @@
             android:id="@+id/action_addToFav"
             android:icon="@drawable/ic_baseline_favorite_24"
             android:title="@string/add_to_fav"
-            app:showAsAction="ifRoom" />
+            app:showAsAction="withText" />
 
         <item
             android:id="@+id/action_settings"

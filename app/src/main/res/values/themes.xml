@@ -30,81 +30,101 @@
 <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimaryDark">?themeColorPrimaryDark</item>
         <item name="colorPrimary">?themeColorPrimary</item>
-        <item name="colorAccent">?themeColorAccent</item>
+        <item name="colorAccent">?themeColorPrimaryDark</item>
+        <item name="colorOnPrimary">?themeColorOnPrimary</item>
+        <item name="colorSurface">?themeColorPrimary</item>
+        <item name="font">?themeFontFamily</item>
+    </style>
+
+    <style name="SplashTheme" parent="AppTheme">
+        <item name="android:windowBackground">@drawable/splash_bacground_drawable</item>
     </style>
 
 
     <style name="RedTheme" parent="AppTheme">
-        <item name="colorOnPrimary">@color/light_purple</item>
         <item name="android:textColorPrimary">@color/black</item>
-        <item name="colorSurface">@color/baby_pink</item>
-        <item name="themeColorPrimaryDark">@color/dark_purple</item>
-        <item name="themeColorPrimary">@color/wine_red</item>
+        <item name="themeColorPrimaryDark">@color/wine_red</item>
+        <item name="themeColorPrimary">@color/pink</item>
+        <item name="themeColorPrimaryVariant">@color/dark_pink</item>
+        <item name="themeColorOnPrimary">@color/baby_pink</item>
         <item name="themeColorAccent">@color/dark_pink</item>
         <item name="themeColorAccent40Alfa">@color/dark_pink_transparency</item>
-        <item name="bottomAppBarStyle">@style/MyRedBottomAppBar</item>
-        <item name="floatingActionButtonStyle">@style/RedFabButton</item>
-        <item name="textInputStyle">@style/RedAppTextField</item>
-        <item name="android:navigationBarColor">@color/dark_purple</item>
-        <item name="android:colorBackground">@color/baby_blue</item>
+        <item name="themeFontFamily">@font/bubblegum_sans</item>
+        <item name="android:colorBackground">?attr/themeColorOnPrimary</item>
+        <item name="floatingActionButtonStyle">@style/FabButtonStyle</item>
+        <item name="android:navigationBarColor">?themeColorPrimaryDark</item>
+        <item name="bottomAppBarStyle">@style/MyBottomAppBar</item>
+        <item name="textInputStyle">@style/MyAppTextField</item>
+    </style>
+
+    <style name="GreenTheme" parent = "AppTheme">
+        <item name="themeColorPrimary">@color/light_deep_green</item>
+        <item name="themeColorPrimaryVariant">@color/deep_green</item>
+        <item name="themeColorPrimaryDark">@color/dark_deep_green</item>
+        <item name="themeColorAccent">@color/light_deep_green</item>
+        <item name="themeColorAccent40Alfa">@color/dark_deep_green_transparency</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="themeColorOnPrimary">@color/light_grey</item>
+        <item name="themeColorSecondary">@color/light_aqua</item>
+        <item name="themeColorSecondaryVariant">@color/aqua</item>
+        <item name="themeColorSecondaryDark">@color/dark_aqua</item>
+        <item name="android:colorBackground">?attr/themeColorOnPrimary</item>
+        <item name="floatingActionButtonStyle">@style/FabButtonStyle</item>
+        <item name="android:navigationBarColor">?themeColorPrimaryDark</item>
+        <item name="bottomAppBarStyle">@style/MyBottomAppBar</item>
+        <item name="textInputStyle">@style/MyAppTextField</item>
     </style>
 
 
     <style name="SpringTheme" parent="AppTheme">
-        <item name="themeColorPrimaryDark">@color/sea_green</item>
-        <item name="themeColorPrimary">@color/lime</item>
-        <item name="colorSurface">@color/light_yellow</item>
-        <item name="colorOnPrimary">@color/grey</item>
-        <item name="themeColorAccent">@color/green</item>
-        <item name="themeColorAccent40Alfa">@color/green_transparency</item>
-        <item name="floatingActionButtonStyle">@style/SpringFabButton</item>
-        <item name="bottomAppBarStyle">@style/SpringBottomAppBar</item>
-        <item name="textInputStyle">@style/SpringAppTextField</item>
-        <item name="android:navigationBarColor">@color/green</item>
-        <item name="android:colorBackground">@color/light_grey</item>
-        <item name="fontFamily">@font/monte_carlo_regular</item>
-        <item name="android:fontFamily">@font/monte_carlo_regular</item>
+        <item name="themeColorPrimaryDark">@color/dark_lime</item>
+        <item name="themeColorPrimary">@color/lime_light</item>
+        <item name="themeColorPrimaryVariant">@color/lime</item>
+        <item name="colorOnPrimary">@color/light_yellow</item>
+        <item name="themeColorAccent">@color/lime</item>
+        <item name="themeColorAccent40Alfa">@color/dark_lime_transparency</item>
+        <item name="android:colorBackground">?attr/themeColorOnPrimary</item>
+        <item name="themeFontFamily">@font/monte_carlo_regular</item>
+        <item name="floatingActionButtonStyle">@style/FabButtonStyle</item>
+        <item name="android:navigationBarColor">?themeColorPrimaryDark</item>
+        <item name="bottomAppBarStyle">@style/MyBottomAppBar</item>
+        <item name="textInputStyle">@style/MyAppTextField</item>
     </style>
 
-    <style name="RedFabButton" parent = "Widget.MaterialComponents.FloatingActionButton">
-        <item name="backgroundTint">@color/dark_purple</item>
-        <item name="elevation">10dp</item>
-        <item name="rippleColor">@color/dark_pink</item>
-    </style>
-
-    <style name="SpringFabButton" parent = "Widget.MaterialComponents.FloatingActionButton">
-        <item name="backgroundTint">@color/sea_green</item>
+    <style name="FabButtonStyle" parent = "Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?themeColorPrimaryDark</item>
         <item name="elevation">30dp</item>
         <item name="fabCradleRoundedCornerRadius">100dp</item>
     </style>
 
-    <style name="MyRedBottomAppBar" parent = "Widget.MaterialComponents.BottomAppBar.Colored">
-        <item name="backgroundTint">@color/wine_red</item>
+    <style name="MyBottomAppBar" parent = "Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="backgroundTint">?themeColorPrimary</item>
     </style>
 
-    <style name="SpringBottomAppBar" parent = "Widget.MaterialComponents.BottomAppBar.Colored">
-        <item name="backgroundTint">@color/lime</item>
-    </style>
-
-    <style name="RedAppTextField"
+    <style name="MyAppTextField"
         parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundColor">@color/baby_pink</item>
-        <item name="boxStrokeColor">@color/wine_red</item>
-        <item name="hintTextColor">@color/wine_red</item>
-        <item name="counterTextColor">@color/wine_red</item>
-    </style>
-
-    <style name="SpringAppTextField"
-        parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxBackgroundColor">@color/light_yellow</item>
-        <item name="boxStrokeColor">@color/green</item>
-        <item name="hintTextColor">@color/green</item>
-        <item name="counterTextColor">@color/green</item>
+        <item name="boxBackgroundColor">?attr/themeColorOnPrimary</item>
+        <item name="boxStrokeColor">?attr/themeColorPrimary</item>
+        <item name="hintTextColor">?attr/themeColorPrimary</item>
+        <item name="counterTextColor">?attr/themeColorPrimary</item>
     </style>
 
     <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="backgroundTint">?attr/bottomColorTint</item>
         <item name="iconTint">?attr/themeColorAccent</item>
+    </style>
+
+    <style name="TitlesTextStyle">
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="fontFamily">?attr/themeFontFamily</item>
+    </style>
+
+    <style name="BaseTextStyle">
+        <item name="android:textSize">@dimen/title_text_size</item>
+        <item name="android:textStyle">normal</item>
+        <item name="fontFamily">?attr/themeFontFamily</item>
     </style>
 
 

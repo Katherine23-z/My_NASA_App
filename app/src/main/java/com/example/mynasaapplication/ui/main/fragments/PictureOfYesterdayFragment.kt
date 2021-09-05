@@ -21,7 +21,7 @@ import com.example.mynasaapplication.model.POD.PictureOfTheDayData
 import com.example.mynasaapplication.ui.main.viewModel.PictureOfYesterdayViewModel
 import kotlinx.android.synthetic.main.picture_of_yesterday_fragment.*
 
-class PictureOfYesterdayFragment : Fragment() {
+class PictureOfYesterdayFragment : Fragment(R.layout.picture_of_yesterday_fragment) {
     private var isExpanded = false
 
     companion object{
@@ -32,9 +32,6 @@ class PictureOfYesterdayFragment : Fragment() {
         ViewModelProvider(this).get(PictureOfYesterdayViewModel::class.java)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-       return inflater.inflate(R.layout.picture_of_yesterday_fragment, container, false)
-    }
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onActivityCreated(savedInstanceState: Bundle?) {

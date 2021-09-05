@@ -16,6 +16,7 @@ class SettingsFragment : Fragment() {
     private lateinit var redTheme: MaterialRadioButton
     private lateinit var springTheme: MaterialRadioButton
     private lateinit var defTheme: MaterialRadioButton
+    private lateinit var greenTheme: MaterialRadioButton
     private lateinit var rg : RadioGroup
     private lateinit var checked : MaterialRadioButton
 
@@ -32,6 +33,7 @@ class SettingsFragment : Fragment() {
         redTheme = view.findViewById(R.id.red_theme)
         springTheme = view.findViewById(R.id.spring_theme)
         defTheme = view.findViewById(R.id.def_theme)
+        greenTheme = view.findViewById(R.id.green_theme)
         rg = view.findViewById(R.id.theme_radio_group)
         initRadioBtns()
         return view
@@ -41,6 +43,7 @@ class SettingsFragment : Fragment() {
         initRadioBtn(redTheme, RED_APP_THEME )
         initRadioBtn(springTheme, SPRING_THEME )
         initRadioBtn(defTheme, DEF_THEME )
+        initRadioBtn(greenTheme, DEEP_GREEN_THEME )
         val currentStyle = getCodeStyle()
 
         checked = rg.children.first {  it.tag == currentStyle } as MaterialRadioButton

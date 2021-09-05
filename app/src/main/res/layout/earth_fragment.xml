@@ -27,8 +27,7 @@
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:text="@string/photo_of_earth"
-        android:textAlignment="center"
-        android:textSize="@dimen/title_text_size"/>
+        style="@style/TitlesTextStyle"/>
 
     <ImageView
         android:id="@+id/earth_image_view"

@@ -43,7 +43,7 @@ class SolarSystemFragment : Fragment() {
         fab_neptun.backgroundTintList = AppCompatResources.getColorStateList(requireContext(), R.color.state_blue)
         fab_saturn.backgroundTintList = AppCompatResources.getColorStateList(requireContext(), R.color.peru)
         expandFab(fab_venus, expanded_container, R.color.maroon, R.color.indian_red)
-        expandFab(fab_earth, expanded_container, R.color.sea_green, R.color.deep_sky_blue)
+        expandFab(fab_earth, expanded_container, R.color.deep_green, R.color.deep_sky_blue)
         expandFab(fab_jupiter, expanded_container, R.color.orange, R.color.coral)
         expandFab(fab_neptun, expanded_container, R.color.plum, R.color.state_blue)
         expandFab(fab_saturn, expanded_container, R.color.lime, R.color.peru)

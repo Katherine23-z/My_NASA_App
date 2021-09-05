@@ -7,15 +7,15 @@ import com.example.mynasaapplication.databinding.MainActivityBinding
 import com.example.mynasaapplication.ui.Navigation
 import com.example.mynasaapplication.ui.main.fragments.PictureOfTheDayFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(R.layout.main_activity) {
     private lateinit var navigation : Navigation
     private lateinit var binding : MainActivityBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(getAppTheme(RED_APP_THEME))
+        setTheme(getAppTheme(DEEP_GREEN_THEME))
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.main_activity)
+        //setContentView(R.layout.main_activity)
         binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         when (codeStyle) {
             RED_APP_THEME -> return R.style.RedTheme
             SPRING_THEME -> return R.style.SpringTheme
+            DEEP_GREEN_THEME -> return R.style.GreenTheme
             DEF_THEME -> return R.style.Theme_MyNASAApplication
         }
         return R.style.Theme_MyNASAApplication
